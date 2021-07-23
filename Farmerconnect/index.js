@@ -142,6 +142,28 @@ app.post("/postProduce", (req, res) =>{
   
 })
 
+
+
+app.post("/requestProduce", (req, res) =>{    
+    console.log(req.body);
+    
+
+    const produceName= req.body.produceName;
+    const orderAmount=req.body.orderAmount;
+    
+    
+
+    const sqlInsert="INSERT INTO farmerconnect.request_produce(produceName, orderAmount)"+
+    "VALUES('"+produceName+"','"+orderAmount+"')";
+
+    db.query(sqlInsert, (err, result)=>{
+        if(err) res.send(err);
+        console.log("Request posted successfully");
+        
+    })
+  
+})
+
 app.listen(3001, () => {
     console.log("running on port 3001");
 })
