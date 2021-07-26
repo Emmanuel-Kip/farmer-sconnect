@@ -2,10 +2,12 @@ const sign_in_btn = document.querySelector("#sign-in-btn");
 const sign_up_btn = document.querySelector("#sign-up-btn");
 const container = document.querySelector(".container");
 const sign_up_2=document.querySelector("#sign-up-two");
-
+const sign_in_btn2=document.querySelector("#login");
+const errorMsg=document.getElementById("errors");
 const e=document.getElementById("standard-select");
 
 var str=e.options[e.selectedIndex];
+
 
 
 sign_up_btn.addEventListener("click", () => {
@@ -19,6 +21,8 @@ sign_in_btn.addEventListener("click", () => {
 sign_up_2.addEventListener("click", () => {
   container.classList.remove("sign-up-mode");
 })
+
+
 
 /*
 window.addEventListener( "load", function () {
