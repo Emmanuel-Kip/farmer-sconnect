@@ -15,20 +15,21 @@
 
         <div class="signin-signup">
 
-          <form action="#" class="sign-in-form">
+          <form action="http://localhost:3001/login" method="POST" class="sign-in-form">
             <h2 class="title">Sign in</h2>
 
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
+              <input type="text" placeholder="Username" name="username"/>
             </div>
 
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password"  />
+              <input type="password" placeholder="Password" name="password"/>
             </div>
 
-            <input type="submit" value="Login" class="btn solid" />
+            <input type="submit" value="Login" class="btn solid" id="login" >
+            <label name="errors" name ="errors" id="errors"></label>
 
             <p class="social-text">Or Sign in with social platforms</p>
 
@@ -52,46 +53,47 @@
 
           </form>
           
-          <form action="#" class="sign-up-form">
+          <form action="http://localhost:3001/" method="POST" class="sign-up-form">
             <h2 class="title">Sign up</h2>
 
             <div class="input-field">
               <i class="fas fa-fname"></i>
-              <input type="text" placeholder="First name" />
+              <input type="text" placeholder="First name" name="fname"/>
             </div>
 
             <div class="input-field">
               <i class="fas fa-lname"></i>
-              <input type="text" placeholder="Last name"  />
+              <input type="text" placeholder="Last name" name="lname" />
             </div>
 
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="email" placeholder="Email" />
+              <input type="email" placeholder="Email" name="email" />
             </div>
 
             <div class="input-field">
               <i class="fas fa-number"></i>
-              <input type="number" placeholder="Phone number" />
+              <input type="number" placeholder="Phone number" name="phone" />
             </div>
 
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="text" placeholder="City" />
+              <input type="text" placeholder="City" name="city"/>
             </div>
 
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
+              <input type="password" placeholder="Password" name="pword"/>
             </div>
 
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Repeat password" />
+              <input type="password" placeholder="Repeat password" name="pword2"/>
             </div>
 
-            <input type="submit" class="btn" value="Sign up" />
-
+            <input type="submit" class="btn" value="Sign up" id="sign-up-two"/>
+            
+            
             <p class="social-text">Or Sign up with social platforms</p>
             <div class="social-media">
               

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>storage</title>
+</head>
+<body>
+
+
+	<section>
+			<table>
+				<tr>
+					<th>Name</th>
+					<th>Unitsize</th>
+					<th>Location</th>
+					<th>Emailaddress</th>
+				</tr>
+	
+				<%
+				if(items.length!=0){
+				var i=1;
+				items.forEach(function(rows){
+				%>
+				<tr>
+					<td><%=i; %></td>
+					<td name="storageCompany"><%=rows.storageCompany %></td>
+					<td name="unitSize"><%=rows.unitSize %></td>
+					<td name="location"><%=rows.location %></td>
+                    <td name="emailaddress"><%=rows.emailaddress %></td>
+					<td><button name="request" >Request</button></td>
+					
+				</tr>
+				<%  i++; }) %>
+				<% } else{ %>
+					<tr>
+						<td colspan="5">No Data Found</td>
+					</tr>
+					<% } %>
+	
+			</table>
+		</div>
+	</section>
+	
+</body>
+</html>
