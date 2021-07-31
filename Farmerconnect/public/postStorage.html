@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Post produce</title>
+
+<link rel="stylesheet" href="/css/postProduce.css">
+
+</head>
+<body>
+
+  <nav>
+    <div class="row">
+      <img src="/img/images/farmerlogo.svg" alt="logo" class="logo">
+      <ul class="main-nav" id="myTopnav">
+        <li class="nav-link"><a href="/welcome4">Home</a></li>
+        <li class="nav-link"><a href="/poststorage">Post Storage </a>
+        </li>
+        <li class="nav-link"><a href="/storage">Storage Requests </a>
+        </li>
+        <li class="nav-link"><a href="/mystorage">My Posts </a>
+        </li>
+        <li class="nav-link"><a href="#">Account</a></li>
+        <li class="nav-link"><a href="/logout">LogOut</a></li>
+                        
+        <a href="javascript:void(0);" class="hambaga" onclick="myFunction()">
+          <img src="images/menu.png" alt="">
+        </a>
+      </ul>
+    </div>
+  </nav>
+  
+  <div class="form-box" id="myForm">
+
+    
+
+    <form name='postProduce' class="form-container" action="http://localhost:3001/postStorage" method="POST">
+
+      <h2>Posting Storage</h2>
+      <div class="user-box">
+        <label>Facility Type</label><br><br>
+        <input type="text" name="facilityName" />
+      </div>
+
+      <div class="user-box">
+        <label>Space Available(km^2)</label><br><br>
+        <input type="number" name="spaceAvailable" />
+
+      </div>
+
+      <div class="user-box">
+        <label>Price </label><br><br>
+        <input type="number" name="price" />
+      </div>
+
+      <div class="user-box">
+        <label>Location</label><br><br>
+        <input type="text" name="location" />
+      </div>
+
+      <input class="subs" type="submit" name="submit" value="Post" onclick="myFunction()">
+     
+
+
+      <!-- <input type="submit" name="submit" value="Post" /> <br><br>
+      <input type="submit" name="btncancel" onclick="closeForm()" value="Close"> -->
+
+    </form>
+  </div>
+
+
+
+
+  <script type="text/javascript" src="../../public/js/postProduce.js"></script>
+
+</body>
+</html>
+

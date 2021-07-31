@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Posts</title>
+	<link href="/css/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+	<section>
+		<nav>
+			<div class="row">
+				<img src="/img/images/farmerlogo.svg" alt="logo" class="logo">
+				<ul class="main-nav" id="myTopnav">
+					<li class="nav-link"><a href="/welcome3">Home</a></li>
+                <li class="nav-link"><a href="/postTransport">Post Transport </a>
+                </li>
+                <li class="nav-link"><a href="/viewtransports">Transport Requests </a>
+                </li>
+                <li class="nav-link"><a href="/viewtransport2">My Transport</a></li>
+                <li class="nav-link"><a href="#">Account</a></li>
+                <li class="nav-link"><a href="/logout">LogOut</a></li>
+					<a href="javascript:void(0);" class="hambaga" onclick="myFunction()">
+						<img src="images/menu.svg" alt="">
+					</a>
+				</ul>
+			</div>
+		</nav>
+		
+		
+		<h1>Transport Requests</h1>
+		
+		<div class="table-hd">
+		
+			<table>
+				<thead>
+					<tr>
+						<th></th>
+						<th>Type of Vehicle</th>
+						<th> Amount to Transport(kgs)</th>
+						<th>Time Ordered</th>
+						<th>Current Location</th>
+						<th>Destination</th>
+						<th>Requester</th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+			</table>
+		
+		</div>
+		
+		<div class="table-cnt">
+		
+			<table>
+		
+				<tr>
+					<% if(items.length!=0){ var i=1; var x; items.forEach(function(rows){ %>
+						<td>
+							<%=i; %>
+						</td>
+						<td>
+							<%=rows.vehicleName %>
+						</td>
+						<td >
+							<%=rows.amountTransported %>
+						</td>
+						<td >
+							<%=rows.timeOrdered %>
+						</td>
+						<td>
+							<%= rows.location %>
+						</td>
+						<td>
+							<%= rows.destination %>
+						</td>
+						<td name="phoneNo">
+									<%=rows.first_name %>
+						</td>
+						<td>
+							<button>Approve</button>
+						</td>
+						<td>
+							<button>Reject</button>
+						</td>
+				</tr>
+		
+				<% i++; }) %>
+					<% } else{ %>
+						<tr>
+							<td colspan="7">No Data Found</td>
+						</tr>
+						<% } %>
+		
+			</table>
+		
+		</div>
+	</section>
+	</body>
+	</html>

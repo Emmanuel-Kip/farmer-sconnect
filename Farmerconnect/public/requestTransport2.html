@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Request produce</title>
+
+<link rel="stylesheet" href="/css/postProduce.css">
+
+</head>
+<body>
+  
+    <nav>
+      <div class="row">
+        <img src="/img/images/farmerlogo.svg" alt="logo" class="logo">
+        <ul class="main-nav" id="myTopnav">
+          <li class="nav-link"><a href="/welcome2">Home</a></li> 
+          <li class="nav-link"><a href="#">Posts </a>
+              <ul>
+                  <li class="nav-sub"><a href="/postproduce">Post Produce</a> </li>
+                  <li class="nav-sub"><a href="/myposts">My Posts</a> </li>
+              </ul>
+          </li>
+          <li class="nav-link"><a href="#">Requests </a>
+              <ul>
+                  <li class="nav-sub"><a href="/requests">Buyer's Requests</a> </li>
+              </ul>
+          </li>
+          <li class="nav-link"><a href="#">Transport </a>
+              <ul>
+                  <li class="nav-sub"><a href="/transports2">Available Transport</a> </li>
+                  <li class="nav-sub"><a href="/requestTransport2">Request Transport</a></li>
+                  <li class="nav-sub"><a href="/viewTransport4">My Requests</a></li>
+              </ul>
+          </li>
+          <li class="nav-link"><a href="#">Storage </a>
+              <ul>
+                  <li class="nav-sub"><a href="/storages">Available Storage</a> </li>
+                  <li class="nav-sub"><a href="/requeststorage">Request Storage</a></li>
+                  <li class="nav-sub"><a href="/mystorage2">My Requests</a></li>
+              </ul>
+          </li>
+          
+          <li class="nav-link"><a href="#">Account</a></li>
+          <li class="nav-link"><a href="/logout">LogOut</a></li>
+          <a href="javascript:void(0);" class="hambaga" onclick="myFunction()">
+            <img src="/img/images/menu.png" alt="">
+          </a>
+        </ul>
+      </div>
+    </nav>
+
+
+
+  <div class="form-box" id="myForm">
+
+  
+      <form name='requestProduce' class="form-container" action="/requesttransport" method="POST">
+        <h1>Request Transport</h1>
+
+        <div class="user-box">
+          <label>Indicated Vehicle Needed</label><br><br>
+          <input type="text" name="vehicleName" />
+        </div>
+
+        <div class="user-box">
+          <label>Quantity to be Transported(in kgs):</label><br><br>
+          <input type="number" name="amount" />
+        </div>
+
+        <div class="user-box">
+            <label>Your Location</label><br><br>
+            <input type="text" name="location" />
+          </div>
+
+          <div class="user-box">
+            <label>Your Destination</label><br><br>
+            <input type="text" name="destination" />
+          </div>
+
+          <input class="subs" type="submit" name="submit" value="Request" onclick="myFunction()">Request</a>
+        
+
+
+        <!-- <input type="submit" name="submit" value="Request" onclick="myFunction()" />
+        <input type="submit" name="btncancel" onclick="closeForm()" value="Close"> -->
+
+      </form>
+  </div>
+
+
+
+
+  <script>
+    function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }
+    
+    function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+    }
+  </script>
+
+
+
+</body>
+</html>
+

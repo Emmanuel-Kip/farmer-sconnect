@@ -49,7 +49,7 @@
 		</nav>
 		
 		
-		<h1>Buyer's Requests</h1>
+		<h1>Available Transport</h1>
 		
 		<div class="table-hd">
 		
@@ -57,11 +57,12 @@
 				<thead>
 					<tr>
 						<th></th>
-					<th>Type of Produce</th>
-					<th>Amount(kgs)</th>
-					<th>Time Ordered</th>
-					<th>Buyer Name</th>
-					<th></th>
+					<th>Vehicle Name</th>
+					<th>Amount(kgs) Transported</th>
+					<th>Price</th>
+					<th>Current Location</th>
+					<th>Destination</th>
+                    <th>Owner</th>
 					</tr>
 				</thead>
 			</table>
@@ -78,20 +79,25 @@
 							<%=i; %>
 						</td>
 						<td>
-							<%=rows.produceName %>
+							<%=rows.vehicleName %>
 						</td>
 						<td name="amount">
-							<%=rows.orderAmount%>
+							<%=rows.amountCapable %>
+						</td>
+						<td name="price">
+							<%=rows.pricePerKg %>
 						</td>
 						<td>
-							<%= rows.timeOrdered %>
-						</td>
-						<td >
-							<%=rows.first_name %>
+							<td><%=rows.location %></td>
 						</td>
 						<td>
-							<input type="submit" name="Request" value="Approve" id="request">
+							<%=rows.destination %>
 						</td>
+						<td name="phoneNo">
+									<%=rows.first_name %>
+								</td>
+						<td><a href="http://localhost:3001/requestTransport2"><button>Request</button></a></td>
+							
 				</tr>
 		
 				<% i++; }) %>

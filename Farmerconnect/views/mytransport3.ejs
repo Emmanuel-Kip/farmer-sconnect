@@ -49,7 +49,7 @@
 		</nav>
 		
 		
-		<h1>Buyer's Requests</h1>
+		<h1>My Transport Requests</h1>
 		
 		<div class="table-hd">
 		
@@ -57,11 +57,10 @@
 				<thead>
 					<tr>
 						<th></th>
-					<th>Type of Produce</th>
-					<th>Amount(kgs)</th>
-					<th>Time Ordered</th>
-					<th>Buyer Name</th>
-					<th></th>
+						<th>Type of Vehicle</th>
+						<th>Amount To Transport(kgs)</th>
+						<th>Location</th>
+						<th>Destination</th>
 					</tr>
 				</thead>
 			</table>
@@ -78,19 +77,16 @@
 							<%=i; %>
 						</td>
 						<td>
-							<%=rows.produceName %>
+							<%=rows.vehicleName %>
 						</td>
 						<td name="amount">
-							<%=rows.orderAmount%>
+							<%=rows.amountTransported %>
 						</td>
 						<td>
-							<%= rows.timeOrdered %>
-						</td>
-						<td >
-							<%=rows.first_name %>
+							<%=rows.location %>
 						</td>
 						<td>
-							<input type="submit" name="Request" value="Approve" id="request">
+							<%=rows.destination %>
 						</td>
 				</tr>
 		
@@ -107,3 +103,125 @@
 	</section>
 	</body>
 	</html>
+
+<!--<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Posts</title>
+	<link href="/css/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div class="navbar">
+		<h3 class="logo">FarmersConnect</h3>
+
+		<ul class="header">
+			<li>Home</li>
+			<li>Posts</li>
+			<li>About</li>
+			<li>Market</li>
+			<li>Account</li>
+		</ul>
+	</div>
+
+	<section>
+		<div class="content">
+				<table>
+					<tr>
+						<th></th>
+						<th>Type of Vehicle</th>
+						<th>Amount To Transport(kgs)</th>
+						<th>Location</th>
+						<th>Destination</th>
+					</tr>
+		
+					<%
+					if(items.length!=0){
+					var i=1;
+					var x;
+					items.forEach(function(rows){
+					%>
+
+					<tr>
+						<td><%=i; %></td>
+						<td><%=rows.vehicleName %></td>
+						<td name="amount"><%=rows.amountTransported %></td>
+						<td><%=rows.location %></td>
+						<td><%=rows.destination %></td>
+					</tr>
+					<%  i++; }) %>
+					<% } else{ %>
+						<tr>
+							<td colspan="7">No Data Found</td>
+						</tr>
+						<% } %>
+		
+				</table>
+			
+		</div>
+	</section>
+	
+</body>
+</html>
+-->
+
+<!--<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Posts</title>
+	<link href="/css/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div class="navbar">
+		<h3 class="logo">FarmersConnect</h3>
+
+		<ul class="header">
+			<li>Home</li>
+			<li>Posts</li>
+			<li>About</li>
+			<li>Market</li>
+			<li>Account</li>
+		</ul>
+	</div>
+
+	<section>
+		<div class="content">
+				<table>
+					<tr>
+						<th></th>
+						<th>Type of Vehicle</th>
+						<th>Amount To Transport(kgs)</th>
+						<th>Current Location</th>
+						<th>Destination</th>
+					</tr>
+		
+					<%
+					if(items.length!=0){
+					var i=1;
+					var x;
+					items.forEach(function(rows){
+					%>
+
+					<tr>
+						<td><%=i; %></td>
+						<td><%=rows.vehicleName %></td>
+						<td name="amount"><%=rows.amountTransported %></td>
+						<td ><%=rows.location %></td>
+						<td><%=rows.destination %></td>
+					</tr>
+					<%  i++; }) %>
+					<% } else{ %>
+						<tr>
+							<td colspan="7">No Data Found</td>
+						</tr>
+						<% } %>
+		
+				</table>
+			
+		</div>
+	</section>
+	
+</body>
+</html>
+-->

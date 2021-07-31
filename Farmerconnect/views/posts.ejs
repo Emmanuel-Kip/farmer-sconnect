@@ -6,57 +6,102 @@
 	<link href="/css/styles.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<div class="navbar">
-		<h3 class="logo">FarmersConnect</h3>
-
-		<ul class="header">
-			<li>Home</li>
-			<li>Posts</li>
-			<li>About</li>
-			<li>Market</li>
-			<li>Account</li>
-		</ul>
-	</div>
 
 	<section>
-		<div class="content">
+		<nav>
+			<div class="row">
+				<img src="/img/images/farmerlogo.svg" alt="logo" class="logo">
+				<ul class="main-nav" id="myTopnav">
+					<li class="nav-link"><a href="/welcome">Home</a></li>
+                        <li class="nav-link"><a href="http:localhost:3001/postproduce">Posts </a>
+                            <ul>
+                                <li class="nav-sub"><a href="/posts">Farmer's Posts</a> </li>
+                            </ul>
+                        </li>
+                        <li class="nav-link"><a href="#">Requests </a>
+                            <ul>
+                              <li class="nav-sub"><a href="/request">Request Produce</a> </li>
+                              <li class="nav-sub"><a href="/myrequest">My Requests</a> </li>
+                          </ul>
+                        <li class="nav-link"><a href="#">Transport </a>
+                            <ul>
+                                <li class="nav-sub"><a href="/transports">Available Transport</a> </li>
+                                <li class="nav-sub"><a href="/requestTransport">Request Transport</a></li>
+                                <li class="nav-sub"><a href="/viewTransport3">My Requests</a></li>
+                            </ul>
+                        </li>
+                       
+                        <li class="nav-link"><a href="#">Account</a></li>
+                        <li class="nav-link"><a href="/logout">LogOut</a></li>
+					<a href="javascript:void(0);" class="hambaga" onclick="myFunction()">
+						<img src="images/menu.svg" alt="">
+					</a>
+				</ul>
+			</div>
+		</nav>
+		
+		
+		<h1>Farmer's Posts</h1>
+		
+		<div class="table-hd">
+		
 			<table>
-				<tr>
-					<th></th>
-					<th>Type of Produce</th>
-					<th>Amount(kgs)</th>
-					<th>Price</th>
-					<th>Date harvested</th>
-					<th>Farmer Contact</th>
-					<th></th>
-				</tr>
-	
-				<%
-				if(items.length!=0){
-				var i=1;
-				items.forEach(function(rows){
-				%>
-				<tr>
-					<td><%=i; %></td>
-					<td name="postName"><%=rows.produceName %></td>
-					<td name="amount"><%=rows.amountAvailable %></td>
-					<td name="price"><%=rows.pricePerKg %></td>
-					<td><%= moment(rows.dateOfHarvest).format('DD/MM/YYYY') %></td>
-					<td><a href="#"><%=rows.farmerID %></a></td>
-					<td><button name="request" id="request">Request</button></td>
-					<td hidden name="postID"><%=rows.postID %></td>
-				</tr>
-				<%  i++; }) %>
-				<% } else{ %>
+				<thead>
 					<tr>
-						<td colspan="7">No Data Found</td>
+						<th></th>
+						<th>Type of Produce</th>
+						<th>Amount(kgs)</th>
+						<th>Price</th>
+						<th>Date harvested</th>
+						<th>Farmer</th>
+						<th></th>
 					</tr>
-					<% } %>
-	
+				</thead>
 			</table>
+		
+		</div>
+		
+		<div class="table-cnt">
+		
+			<table>
+		
+				<tr>
+					<% if(items.length!=0){ var i=1; var x; items.forEach(function(rows){ %>
+						<td>
+							<%=i; %>
+						</td>
+						<td>
+							<%=rows.produceName %>
+						</td>
+						<td name="amount">
+							<%=rows.amountAvailable %>
+						</td>
+						<td name="price">
+							<%=rows.pricePerKg %>
+						</td>
+						<td>
+							<%= moment(rows.dateOfHarvest).format('DD/MM/YYYY') %>
+						</td>
+						<td name="phoneNo">
+									<%=rows.first_name %>
+								</td>
+						<td><a href="http://localhost:3001/request"><button>Request</button></a></td>
+						<td hidden name="postID">
+							<%-rows.postID %>
+						</td>
+		
+				</tr>
+		
+				<% i++; }) %>
+					<% } else{ %>
+						<tr>
+							<td colspan="7">No Data Found</td>
+						</tr>
+						<% } %>
+		
+			</table>
+		
 		</div>
 	</section>
-	
-	<script type="text/javascript" src="/js/posts.js"></script>
-</body>
-</html>
+	</body>
+	</html>

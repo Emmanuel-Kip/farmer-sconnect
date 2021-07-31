@@ -1,3 +1,4 @@
+
 const sign_in_btn = document.querySelector("#sign-in-btn");
 const sign_up_btn = document.querySelector("#sign-up-btn");
 const container = document.querySelector(".container");
@@ -22,6 +23,14 @@ sign_up_2.addEventListener("click", () => {
   container.classList.remove("sign-up-mode");
 })
 
+/*
+window.addEventListener("load",  function(){
+  let response=JSON.parse(event.target.response);
+  if(response.success){
+    alert("Registered Successfully");
+  }
+})
+*/
 
 
 /*

@@ -13,18 +13,18 @@
 				<img src="/img/images/farmerlogo.svg" alt="logo" class="logo">
 				<ul class="main-nav" id="myTopnav">
 					<li class="nav-link"><a href="/welcome2">Home</a></li> 
-        <li class="nav-link"><a href="#">Posts </a>
-            <ul>
-                <li class="nav-sub"><a href="/postproduce">Post Produce</a> </li>
-                <li class="nav-sub"><a href="/myposts">My Posts</a> </li>
-            </ul>
-        </li>
-        <li class="nav-link"><a href="#">Requests </a>
-            <ul>
-                <li class="nav-sub"><a href="/requests">Buyer's Requests</a> </li>
-            </ul>
-        </li>
-        <li class="nav-link"><a href="#">Transport </a>
+        			<li class="nav-link"><a href="#">Posts </a>
+           			 <ul>
+                		<li class="nav-sub"><a href="/postproduce">Post Produce</a> </li>
+               		<li class="nav-sub"><a href="/myposts">My Posts</a> </li>
+           			 </ul>
+       				 </li>
+        			<li class="nav-link"><a href="#">Requests </a>
+           			 <ul>
+                		<li class="nav-sub"><a href="/requests">Buyer's Requests</a> </li>
+           			 </ul>
+       				 </li>
+        			<li class="nav-link"><a href="#">Transport </a>
             <ul>
                 <li class="nav-sub"><a href="/transports2">Available Transport</a> </li>
                 <li class="nav-sub"><a href="/requestTransport2">Request Transport</a></li>
@@ -49,7 +49,7 @@
 		</nav>
 		
 		
-		<h1>Buyer's Requests</h1>
+		<h1>Available Storage</h1>
 		
 		<div class="table-hd">
 		
@@ -57,11 +57,11 @@
 				<thead>
 					<tr>
 						<th></th>
-					<th>Type of Produce</th>
-					<th>Amount(kgs)</th>
-					<th>Time Ordered</th>
-					<th>Buyer Name</th>
-					<th></th>
+						<th>Type of Storage Facility</th>
+						<th>Space Available(in km^2)</th>
+						<th>Location</th>
+                        <th>Price</th>
+						<th></th>>
 					</tr>
 				</thead>
 			</table>
@@ -78,19 +78,19 @@
 							<%=i; %>
 						</td>
 						<td>
-							<%=rows.produceName %>
-						</td>
-						<td name="amount">
-							<%=rows.orderAmount%>
-						</td>
-						<td>
-							<%= rows.timeOrdered %>
+							<%=rows.facilityName %>
 						</td>
 						<td >
-							<%=rows.first_name %>
+							<%=rows.spaceAvailable %>
 						</td>
-						<td>
-							<input type="submit" name="Request" value="Approve" id="request">
+						<td >
+							<%=rows.location %>
+						</td>
+                        <td >
+							<%=rows.price %>
+						</td>
+						<td >
+							<a href="/requeststorage"><button>Request</button></a>
 						</td>
 				</tr>
 		
@@ -107,3 +107,4 @@
 	</section>
 	</body>
 	</html>
+

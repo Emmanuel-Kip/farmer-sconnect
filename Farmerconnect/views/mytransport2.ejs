@@ -41,7 +41,7 @@
 		</nav>
 		
 		
-		<h1>Farmer's Posts</h1>
+		<h1>My Transport Requests</h1>
 		
 		<div class="table-hd">
 		
@@ -49,12 +49,10 @@
 				<thead>
 					<tr>
 						<th></th>
-					<th>Vehicle Name</th>
-					<th>Amount(kgs) Transported</th>
-					<th>Price</th>
-					<th>Current Location</th>
-					<th>Destination</th>
-                    <th>Owner</th>
+						<th>Type of Vehicle</th>
+						<th>Amount To Transport(kgs)</th>
+						<th>Location</th>
+						<th>Destination</th>
 					</tr>
 				</thead>
 			</table>
@@ -74,22 +72,14 @@
 							<%=rows.vehicleName %>
 						</td>
 						<td name="amount">
-							<%=rows.amountCapable %>
-						</td>
-						<td name="price">
-							<%=rows.pricePerKg %>
+							<%=rows.amountTransported %>
 						</td>
 						<td>
-							<td><%=rows.location %></td>
+							<%=rows.location %>
 						</td>
 						<td>
 							<%=rows.destination %>
 						</td>
-						<td name="phoneNo">
-									<%=rows.first_name %>
-								</td>
-						<td><a href="http://localhost:3001/requestTransport"><button>Request</button></a></td>
-							
 				</tr>
 		
 				<% i++; }) %>
@@ -106,12 +96,11 @@
 	</body>
 	</html>
 
-
 <!--<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Transport Available</title>
+	<title>Posts</title>
 	<link href="/css/styles.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -129,44 +118,41 @@
 
 	<section>
 		<div class="content">
-			<table>
-				<tr>
-					<th></th>
-					<th>Vehicle Name</th>
-					<th>Amount(kgs) Transported</th>
-					<th>Price</th>
-					<th>Current Location</th>
-					<th>Destination</th>
-                    <th>Owner</th>
-				</tr>
-	
-				<%
-				if(items.length!=0){
-				var i=1;
-				items.forEach(function(rows){
-				%>
-				<tr>
-					<td><%=i; %></td>
-					<td><%=rows.vehicleName %></td>
-					<td><%=rows.amountCapable %></td>
-                    <td><%=rows.pricePerKm %></td>
-                    <td><%=rows.location %></td>
-					<td><%=rows.destination %></td>
-					<td><%=rows.first_name%></td>
-					<td><a href="/requestTransport"<input type="submit" name="Request" value="Request" id="request"></td>
-				</tr>
-				<%  i++; }) %>
-				<% } else{ %>
+				<table>
 					<tr>
-						<td colspan="7">No Data Found</td>
+						<th></th>
+						<th>Type of Vehicle</th>
+						<th>Amount To Transport(kgs)</th>
+						<th>Location</th>
+						<th>Destination</th>
 					</tr>
-					<% } %>
-	
-			</table>
+		
+					<%
+					if(items.length!=0){
+					var i=1;
+					var x;
+					items.forEach(function(rows){
+					%>
+
+					<tr>
+						<td><%=i; %></td>
+						<td><%=rows.vehicleName %></td>
+						<td name="amount"><%=rows.amountTransported %></td>
+						<td><%=rows.location %></td>
+						<td><%=rows.destination %></td>
+					</tr>
+					<%  i++; }) %>
+					<% } else{ %>
+						<tr>
+							<td colspan="7">No Data Found</td>
+						</tr>
+						<% } %>
+		
+				</table>
+			
 		</div>
 	</section>
 	
-
 </body>
 </html>
 -->

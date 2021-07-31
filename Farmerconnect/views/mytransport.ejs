@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Posts</title>
+	<link href="/css/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+	<section>
+		<nav>
+			<div class="row">
+				<img src="/img/images/farmerlogo.svg" alt="logo" class="logo">
+				<ul class="main-nav" id="myTopnav">
+					<li class="nav-link"><a href="/welcome3">Home</a></li>
+                <li class="nav-link"><a href="/postTransport">Post Transport </a>
+                </li>
+                <li class="nav-link"><a href="/viewtransports">Transport Requests </a>
+                </li>
+                <li class="nav-link"><a href="/viewtransport2">My Transport</a></li>
+                <li class="nav-link"><a href="#">Account</a></li>
+                <li class="nav-link"><a href="/logout">LogOut</a></li>
+					<a href="javascript:void(0);" class="hambaga" onclick="myFunction()">
+						<img src="images/menu.svg" alt="">
+					</a>
+				</ul>
+			</div>
+		</nav>
+		
+		
+		<h1>My Transport Posts</h1>
+		
+		<div class="table-hd">
+		
+			<table>
+				<thead>
+					<tr>
+						<th></th>
+						<th>Type of Vehicle</th>
+						<th>Amount To Transport(kgs)</th>
+						<th>Location</th>
+						<th>Destination</th>
+						<th>Price</th>
+					</tr>
+				</thead>
+			</table>
+		
+		</div>
+		
+		<div class="table-cnt">
+		
+			<table>
+		
+				<tr>
+					<% if(items.length!=0){ var i=1; var x; items.forEach(function(rows){ %>
+						<td>
+							<%=i; %>
+						</td>
+						<td>
+							<%=rows.vehicleName %>
+						</td>
+						<td name="amount">
+							<%=rows.amountTransported %>
+						</td>
+						<td>
+							<%=rows.location %>
+						</td>
+						<td>
+							<%=rows.destination %>
+						</td>
+						<td>
+							<%=rows.pricePerKm %>
+						</td>
+				</tr>
+		
+				<% i++; }) %>
+					<% } else{ %>
+						<tr>
+							<td colspan="7">No Data Found</td>
+						</tr>
+						<% } %>
+		
+			</table>
+		
+		</div>
+	</section>
+	</body>
+	</html>
+
+<!--<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Posts</title>
+	<link href="/css/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div class="navbar">
+		<h3 class="logo">FarmersConnect</h3>
+
+		<ul class="header">
+			<li>Home</li>
+			<li>Posts</li>
+			<li>About</li>
+			<li>Market</li>
+			<li>Account</li>
+		</ul>
+	</div>
+
+	<section>
+		<div class="content">
+				<table>
+					<tr>
+						<th></th>
+						<th>Type of Vehicle</th>
+						<th>Amount To Transport(kgs)</th>
+						<th>Location</th>
+						<th>Destination</th>
+					</tr>
+		
+					<%
+					if(items.length!=0){
+					var i=1;
+					var x;
+					items.forEach(function(rows){
+					%>
+
+					<tr>
+						<td><%=i; %></td>
+						<td><%=rows.vehicleName %></td>
+						<td name="amount"><%=rows.amountTransported %></td>
+						<td><%=rows.location %></td>
+						<td><%=rows.destination %></td>
+					</tr>
+					<%  i++; }) %>
+					<% } else{ %>
+						<tr>
+							<td colspan="7">No Data Found</td>
+						</tr>
+						<% } %>
+		
+				</table>
+			
+		</div>
+	</section>
+	
+</body>
+</html>
+-->
+
+<!--<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Posts</title>
+	<link href="/css/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div class="navbar">
+		<h3 class="logo">FarmersConnect</h3>
+
+		<ul class="header">
+			<li>Home</li>
+			<li>Posts</li>
+			<li>About</li>
+			<li>Market</li>
+			<li>Account</li>
+		</ul>
+	</div>
+
+	<section>
+		<div class="content">
+				<table>
+					<tr>
+						<th></th>
+						<th>Type of Vehicle</th>
+						<th>Amount Capable(kgs)</th>
+						<th>Current Location</th>
+						<th>Destination</th>
+						<th>Price</th>
+					</tr>
+		
+					<%
+					if(items.length!=0){
+					var i=1;
+					var x;
+					items.forEach(function(rows){
+					%>
+
+					<tr>
+						<td><%=i; %></td>
+						<td><%=rows.vehicleName %></td>
+						<td name="amount"><%=rows.amountTransported %></td>
+						<td name="price"><%=rows.pricePerKm %></td>
+						<td><%=rows.location %></td>
+						<td><%=rows.destination %></td>
+					</tr>
+					<%  i++; }) %>
+					<% } else{ %>
+						<tr>
+							<td colspan="7">No Data Found</td>
+						</tr>
+						<% } %>
+		
+				</table>
+			
+		</div>
+	</section>
+	
+</body>
+</html>
+-->
