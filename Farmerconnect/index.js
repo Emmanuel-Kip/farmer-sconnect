@@ -14,12 +14,8 @@ const LocalStrategy   = require('passport-local').Strategy;
 
 const mysql= require('mysql');
 
-const db = mysql.createConnection({
-				  host     : 'localhost',
-				  user     : 'root',
-				  password : '',
-                  port: 3307,
-				});
+var conn = mysql.createConnection({host: 'fconnect.mysql.database.azure.com', user: 'kiptoo@fconnect', password: '6019LYT2#', database: 'farmerconnect', port: 3306, ssl:true});
+
 db.query('USE `farmerconnect`');	
 
 app.use(express.urlencoded({
